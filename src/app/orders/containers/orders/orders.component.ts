@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IOrdersState } from '../../state/reducer/orders.reducer';
-import { OrdersApiActions } from 'src/app/orders/state/actions'
-import { OrdersService } from '../../services/orders.service';
+import { IOrder, ITable } from '@app/orders/interfaces';
+import { Observable } from 'rxjs';
+
+import * as OrderSelectors from '@app/orders/state/selectors';
+import { tableState } from '@app/orders/enums/table-state.enum';
+import { OrdersPageActions } from '@app/orders/state/actions';
 
 
 @Component({
@@ -12,11 +16,14 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class OrdersComponent implements OnInit {
 
+  getOrders$: Observable<Array<IOrder>>;
   constructor(private store: Store<IOrdersState>) { }
 
   ngOnInit(): void {
-    this.store.dispatch(OrdersApiActions.getOrderItems());
+    this.getOrders$ = this.store.select(OrderSelectors.getOrders);
   }
 
-
+  orderStateChange(e) {
+    this.store.dispatch(OrdersPageActions.setOrderState({ orderState: e.orderState, order: e.order }))
+  }
 }

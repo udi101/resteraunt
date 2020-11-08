@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.order {
+  &__items {
+
+    &__item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+    }
+  }
+}
+
+
+.edit {
+  background: #5090c0;
+}
+
+.paid {
+  background: gray;
+}
+
+.canceled {
+  background: red;
+}

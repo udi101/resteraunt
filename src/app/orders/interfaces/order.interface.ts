@@ -3,6 +3,7 @@ import { IOrderItem } from './order-item.interface';
 
 export interface IOrder {
   orderId: number;
+  tableNumber: number;
   orderItems: Array<IOrderItem>;
   orderState: orderState;
 }

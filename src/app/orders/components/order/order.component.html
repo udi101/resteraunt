@@ -1,0 +1,19 @@
+<div class="order" [ngClass]="getClass(order.orderState)">
+  <div class="order__number">Order number: {{order?.tableNumber}}</div>
+  <div class="order__tooltip">
+    <div class="order__items">
+      <div class="order__items__item" *ngFor="let orderItem of order.orderItems">
+        <div>{{orderItem.name}}</div>
+        <div>{{orderItem.cost}}</div>
+      </div>
+      <div class="order__state">
+        <select name="slcOrderState" id="slcOrderState" [value]="getOrderState(order.orderState)"
+          (change)="setOrderState($event.target.value)">
+          <option value="edit">edit</option>
+          <option value="paid">paid</option>
+          <option value="canceled">canceled</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

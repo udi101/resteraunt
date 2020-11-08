@@ -1,11 +1,17 @@
-.orders {
+.tables {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 40px;
 }
 
-.order {
-
+.table {
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  height: 180px;
+  border-radius: 60px;
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
 
   &__number {
     &__num {
@@ -16,7 +22,7 @@
   }
 
   &:hover {
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -26,16 +32,8 @@
   background-color: #205090;
 }
 
-.canceled {
-  background-color: red;
-  cursor: not-allowed;
-}
-
-.paid {
-  background-color: gray;
-  cursor: not-allowed;
-}
-
-.edit {
+.occupied {
   background-color: orange;
+  cursor: not-allowed;
 }
+

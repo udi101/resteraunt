@@ -1,4 +1,15 @@
 <app-layout>
-  <menu [menuItems]="getOrderItems$ | async" (menuItemSelected)="menuItemSelected($event)" aside></menu>
-  <order-edit [currentOrder]="getCurrentOrder$ | async" section></order-edit>
+  <menu [menuItems]="getOrderItems$ | async" *ngIf="!!(getCurrentOrder$ | async).tableNumber"
+    (menuItemSelected)="menuItemSelected($event)" aside></menu>
+
+  <div section *ngIf="getCurrentOrder$ | async as currentOrder">
+    <table-select *ngIf="!currentOrder.tableNumber else orderEdit" [tables]="getTables$ | async"
+      (tableSelected)="tableSelected($event)">
+    </table-select>
+    <ng-template #orderEdit>
+      <order-edit [currentOrder]="getCurrentOrder$ | async" (removeMenuItem)="removeItemFromOrder($event)"
+        (insertOrder)="insertOrder($event)">
+      </order-edit>
+    </ng-template>
+  </div>
 </app-layout>

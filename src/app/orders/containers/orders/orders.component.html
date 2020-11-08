@@ -1,1 +1,9 @@
-<p>orders works!</p>
+<app-layout>
+  <div class="orders" section>
+    <order class="order" *ngFor="let order of getOrders$ | async" [order]="order"
+      (orderStateChanged)="orderStateChange($event)"></order>
+
+    <div class="order-details"></div>
+  </div>
+
+</app-layout>

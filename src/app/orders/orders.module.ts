@@ -10,7 +10,9 @@ import { OrdersEffects } from './state/effects/orders.effects';
 import { NewOrderComponent } from './containers/new-order/new-order.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SharedModule } from '@app/shared/shared.module';
+import { TableSelectComponent } from './components/table-select/table-select.component';
 import { OrderEditComponent } from './components/order-edit/order-edit.component';
+import { OrderComponent } from './components/order/order.component';
 
 
 export const routes: Routes = [
@@ -20,7 +22,7 @@ export const routes: Routes = [
 
 
 @NgModule({
-  declarations: [OrdersComponent, NewOrderComponent, MenuComponent, OrderEditComponent],
+  declarations: [OrdersComponent, NewOrderComponent, MenuComponent, OrderEditComponent, TableSelectComponent, OrderComponent],
   imports: [
     CommonModule,
     SharedModule,

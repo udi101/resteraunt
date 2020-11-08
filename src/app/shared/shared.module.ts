@@ -4,6 +4,8 @@ import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutComponent } from './layout/layout.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -11,6 +13,6 @@ import { LayoutComponent } from './layout/layout.component';
   imports: [
     CommonModule
   ],
-  exports: [MaterialModule, HttpClientModule, LayoutComponent]
+  exports: [MaterialModule, HttpClientModule, LayoutComponent, ReactiveFormsModule]
 })
 export class SharedModule { }

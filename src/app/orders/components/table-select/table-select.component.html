@@ -1,0 +1,9 @@
+<h1> 1. Select a table</h1>
+
+<div class="tables">
+  <div class="table" *ngFor="let table of tables" [ngClass]="setClass(table)" (click)=" setCurrentTable(table)">
+    <div class="mat-body-2">
+      Table number:
+      <span class="table__number__num">{{table?.tableNumber}}</span></div>
+  </div>
+</div>
