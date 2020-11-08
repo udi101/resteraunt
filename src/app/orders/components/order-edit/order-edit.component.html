@@ -1,0 +1,16 @@
+<div class="currentOrder" *ngIf="currentOrder"></div>
+
+<div class="order" *ngFor="let orderItem of currentOrder.orderItems">
+  <div class="order__item">
+
+    <div class="order__item__name">
+      {{orderItem.name}}
+    </div>
+    <div class="order__item__dashed"></div>
+    <div class="order__item__cost">
+      {{orderItem.cost | currency}}
+    </div>
+  </div>
+</div>
+<div class="totalCost">
+</div>

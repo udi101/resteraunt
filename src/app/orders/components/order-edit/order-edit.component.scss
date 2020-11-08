@@ -1,0 +1,13 @@
+.order {
+  &__item {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    padding: 4px 0;
+
+    &__dashed {
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+    }
+  }
+
+
+}

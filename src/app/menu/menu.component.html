@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <div class="menu">
+    <div class="menu__items">
+      <div class="mat-body-2 menu__items__item" [routerLink]="['/']">Home</div>
+
+      <div class="mat-body-2 menu__items__item"  [mat-menu-trigger-for]="workersMenu"
+      routerLinkActive="router-link-active" >Orders
+      <mat-menu #workersMenu>
+        <button mat-menu-item class="primary-color" [routerLink]="['/orders','add']" routerLinkActive="router-link-active" >New Order</button>
+        <button mat-menu-item class="primary-color" [routerLink]="['/orders']">Orders</button>
+      </mat-menu>
+    </div>
+      <!-- <div class="mat-body-2 menu__items__item" [routerLink]="['/orders']" routerLinkActive="router-link-active" >Orders</div> -->
+    </div>
+    <div class="manu__login">
+      <div class="mat-body-2">Login</div>
+    </div>
+  </div>
+</mat-toolbar>

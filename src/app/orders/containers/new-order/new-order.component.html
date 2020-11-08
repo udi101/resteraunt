@@ -1,0 +1,4 @@
+<app-layout>
+  <menu [menuItems]="getOrderItems$ | async" (menuItemSelected)="menuItemSelected($event)" aside></menu>
+  <order-edit [currentOrder]="getCurrentOrder$ | async" section></order-edit>
+</app-layout>
